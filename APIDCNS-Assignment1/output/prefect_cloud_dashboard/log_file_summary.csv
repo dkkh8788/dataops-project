@@ -1,0 +1,399 @@
+timestamp,level,flow_run_id,task_run_id,message
+2024-10-10 23:13:11.074668+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,,Runner 'system-crash-ds-workflow' submitting flow run 'dc64762e-9207-40cd-a674-9944508f6870'
+2024-10-10 23:13:11.449593+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,,Opening process...
+2024-10-10 23:13:11.462596+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,,Completed submission of flow run 'dc64762e-9207-40cd-a674-9944508f6870'
+2024-10-10 23:13:13.279634+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,,Downloading flow code from storage at '.'
+2024-10-10 23:13:22.306087+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,3b992245-9e0e-45b3-b333-ff139a66e56a,"Successfully executed ../tasks/BasicStats.py:
+
+Summary Statistics:
+"
+2024-10-10 23:13:22.307397+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,3b992245-9e0e-45b3-b333-ff139a66e56a,"
+Summary Statistics:"
+2024-10-10 23:13:22.308001+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,3b992245-9e0e-45b3-b333-ff139a66e56a,"2024-10-11 04:43:21,317 - INFO - Dataset loaded successfully.
+2024-10-11 04:43:21,326 - INFO - DataFrame head:
+  App_Name  CPU_Usage  ...  App_Usage_Level  Crash_Label
+0  Netflix  35.473619  ...           Medium          0.0
+1  Twitter  98.132710  ...           Medium          1.0
+2  Discord  61.316465  ...              Low          0.0
+3    Slack  86.208830  ...              Low          0.0
+4   Amazon  77.266467  ...              Low          0.0
+
+[5 rows x 15 columns]
+2024-10-11 04:43:21,338 - INFO -        App_Name     CPU_Usage  ...  App_Usage_Level   Crash_Label
+count     11560  11329.000000  ...            11560  11560.000000
+unique       15           NaN  ...                3           NaN
+top     Discord           NaN  ...           Medium           NaN
+freq        807           NaN  ...             5672           NaN
+mean        NaN     62.397586  ...              NaN      0.138235
+std         NaN     16.272409  ...              NaN      0.345162
+min         NaN      4.310223  ...              NaN      0.000000
+25%         NaN     51.389702  ...              NaN      0.000000
+50%         NaN     62.486420  ...              NaN      0.000000
+75%         NaN     73.819859  ...              NaN      0.000000
+max         NaN     99.952131  ...              NaN      1.000000
+
+[11 rows x 15 columns]
+2024-10-11 04:43:21,356 - INFO - 
+       App_Name     CPU_Usage  ...  App_Usage_Level   Crash_Label
+count     11560  11329.000000  ...            11560  11560.000000
+unique       15           NaN  ...                3           NaN
+top     Discord           NaN  ...           Medium           NaN
+freq        807           NaN  ...             5672           NaN
+mean        NaN     62.397586  ...              NaN      0.138235
+std         NaN     16.272409  ...              NaN      0.345162
+min         NaN      4.310223  ...              NaN      0.000000
+25%         NaN     51.389702  ...              NaN      0.000000
+50%         NaN     62.486420  ...              NaN      0.000000
+75%         NaN     73.819859  ...              NaN      0.000000
+max         NaN     99.952131  ...              NaN      1.000000
+
+[11 rows x 15 columns]
+2024-10-11 04:43:22,134 - INFO - Missing Values:
+2024-10-11 04:43:22,136 - INFO - 
+App_Name                        0
+CPU_Usage                     231
+Memory_Usage                  231
+Battery_Level                   0
+Temperature                   231
+Disk_Space                      0
+Network_Signal                  0
+App_Version                     0
+Error_Logs                      0
+Device_Model                    0
+Session_Time                    0
+Num_App_Crashes                 0
+Duration_Since_Last_Charge      0
+App_Usage_Level                 0
+Crash_Label                     0
+dtype: int64
+2024-10-11 04:43:22,136 - INFO - Data Types:
+2024-10-11 04:43:22,136 - INFO - 
+App_Name                       object
+CPU_Usage                     float64
+Memory_Usage                  float64
+Battery_Level                 float64
+Temperature                   float64
+Disk_Space                    float64
+Network_Signal                float64
+App_Version                   float64
+Error_Logs                      int64
+Device_Model                   object
+Session_Time                  float64
+Num_App_Crashes                 int64
+Duration_Since_Last_Charge    float64
+App_Usage_Level                object
+Crash_Label                   float64
+dtype: object"
+2024-10-10 23:13:22.313596+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,3b992245-9e0e-45b3-b333-ff139a66e56a,Finished in state Completed()
+2024-10-10 23:13:23.681266+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,775f3309-ec9e-4484-930b-77b07718b0a4,"Successfully executed ../tasks/DataPreProcess.py:
+"
+2024-10-10 23:13:23.682777+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,775f3309-ec9e-4484-930b-77b07718b0a4,
+2024-10-10 23:13:23.683928+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,775f3309-ec9e-4484-930b-77b07718b0a4,"2024-10-11 04:43:23,181 - INFO - Dataset loaded successfully.
+2024-10-11 04:43:23,186 - INFO - DataFrame head:
+  App_Name  CPU_Usage  ...  App_Usage_Level  Crash_Label
+0  Netflix  35.473619  ...           Medium          0.0
+1  Twitter  98.132710  ...           Medium          1.0
+2  Discord  61.316465  ...              Low          0.0
+3    Slack  86.208830  ...              Low          0.0
+4   Amazon  77.266467  ...              Low          0.0
+
+[5 rows x 15 columns]
+2024-10-11 04:43:23,187 - INFO - 
+Records greater than 100:
+2024-10-11 04:43:23,187 - INFO - 11548    149.286188
+11549    146.987775
+11550    138.980624
+11551    141.555246
+11552    139.083107
+11553    142.135888
+11554    112.648205
+11555    122.810369
+11556    110.043715
+11557    129.408817
+11558    115.882346
+11559    136.678449
+Name: Battery_Level, dtype: float64
+2024-10-11 04:43:23,187 - INFO - 
+Records greater than 100:
+2024-10-11 04:43:23,187 - INFO - Series([], Name: Battery_Level, dtype: float64)
+2024-10-11 04:43:23,190 - INFO - cleaned_data summary
+2024-10-11 04:43:23,190 - INFO - =======================================================================
+2024-10-11 04:43:23,197 - INFO -           CPU_Usage  Memory_Usage  ...  Duration_Since_Last_Charge   Crash_Label
+count  11317.000000  11317.000000  ...                11548.000000  11548.000000
+mean      62.396201     56.960900  ...                   23.876836      0.138119
+std       16.275145      9.876400  ...                   13.838301      0.345040
+min        4.310223     24.027532  ...                    0.004914      0.000000
+25%       51.401378     50.218679  ...                   12.097158      0.000000
+50%       62.487586     56.980808  ...                   23.830493      0.000000
+75%       73.819859     63.572382  ...                   35.858172      0.000000
+max       99.952131     94.278519  ...                   47.995185      1.000000
+
+[8 rows x 12 columns]
+2024-10-11 04:43:23,201 - INFO - 
+CPU_Usage, Outliers Range[lb, ub] => [17.7736578296853,  107.44757949232508] 
+2024-10-11 04:43:23,201 - INFO - =====================================================================
+2024-10-11 04:43:23,202 - INFO -         App_Name  CPU_Usage  ...  App_Usage_Level  Crash_Label
+50   Google Maps  13.487756  ...           Medium          1.0
+74         Slack  13.233145  ...              Low          0.0
+173     Snapchat  17.140654  ...              Low          0.0
+271     Facebook   9.957077  ...              Low          0.0
+
+[4 rows x 15 columns]
+2024-10-11 04:43:23,205 - INFO - 
+
+2024-10-11 04:43:23,207 - INFO - 
+Memory_Usage, Outliers Range[lb, ub] => [30.188124412659327,  83.60293689764828] 
+2024-10-11 04:43:23,207 - INFO - =====================================================================
+2024-10-11 04:43:23,207 - INFO -         App_Name  CPU_Usage  ...  App_Usage_Level  Crash_Label
+43   Google Maps  66.247185  ...           Medium          0.0
+57       Netflix  39.176034  ...           Medium          0.0
+85      Facebook  85.637648  ...             High          0.0
+226     Telegram  49.279034  ...              Low          0.0
+
+[4 rows x 15 columns]
+2024-10-11 04:43:23,210 - INFO - 
+
+2024-10-11 04:43:23,212 - INFO - 
+Battery_Level, Outliers Range[lb, ub] => [-49.009374399917434,  149.05431390446722] 
+2024-10-11 04:43:23,212 - INFO - =====================================================================
+2024-10-11 04:43:23,213 - INFO - 
+Temperature, Outliers Range[lb, ub] => [12.733699528834766,  62.016587989330006] 
+2024-10-11 04:43:23,213 - INFO - =====================================================================
+2024-10-11 04:43:23,213 - INFO -          App_Name  CPU_Usage  ...  App_Usage_Level  Crash_Label
+4148       Amazon   4.310223  ...           Medium          0.0
+7138     Telegram  10.057908  ...           Medium          0.0
+9036     Snapchat  64.082543  ...             High          0.0
+9037  Google Maps  47.291453  ...              Low          0.0
+
+[4 rows x 15 columns]
+2024-10-11 04:43:23,217 - INFO - 
+
+2024-10-11 04:43:23,218 - INFO - 
+Disk_Space, Outliers Range[lb, ub] => [-255.03313367640143,  771.4377756086253] 
+2024-10-11 04:43:23,218 - INFO - =====================================================================
+2024-10-11 04:43:23,219 - INFO - 
+Network_Signal, Outliers Range[lb, ub] => [-49.63166187618599,  150.491229174725] 
+2024-10-11 04:43:23,219 - INFO - =====================================================================
+2024-10-11 04:43:23,220 - INFO - 
+Session_Time, Outliers Range[lb, ub] => [137.75790491931173,  202.25100467731284] 
+2024-10-11 04:43:23,220 - INFO - =====================================================================
+2024-10-11 04:43:23,220 - INFO -       App_Name  CPU_Usage  ...  App_Usage_Level  Crash_Label
+145  Instagram  84.041416  ...           Medium          0.0
+247    Spotify  70.130939  ...              Low          0.0
+301   WhatsApp  85.513879  ...             High          0.0
+313       Uber  86.511620  ...           Medium          0.0
+
+[4 rows x 15 columns]
+2024-10-11 04:43:23,223 - INFO - 
+
+2024-10-11 04:43:23,225 - INFO - 
+Duration_Since_Last_Charge, Outliers Range[lb, ub] => [-23.544361956656303,  71.49969233999829] 
+2024-10-11 04:43:23,225 - INFO - =====================================================================
+2024-10-11 04:43:23,466 - INFO - 
+Missing Values Before Imputation:
+2024-10-11 04:43:23,467 - INFO - App_Name                        0
+CPU_Usage                     281
+Memory_Usage                  308
+Battery_Level                   0
+Temperature                   390
+Disk_Space                      0
+Network_Signal                  0
+App_Version                     0
+Error_Logs                      0
+Device_Model                    0
+Session_Time                   97
+Num_App_Crashes                 0
+Duration_Since_Last_Charge      0
+App_Usage_Level                 0
+Crash_Label                     0
+dtype: int64
+2024-10-11 04:43:23,470 - INFO - 
+Missing Values after imputation:
+2024-10-11 04:43:23,471 - INFO - App_Name                      0
+CPU_Usage                     0
+Memory_Usage                  0
+Battery_Level                 0
+Temperature                   0
+Disk_Space                    0
+Network_Signal                0
+App_Version                   0
+Error_Logs                    0
+Device_Model                  0
+Session_Time                  0
+Num_App_Crashes               0
+Duration_Since_Last_Charge    0
+App_Usage_Level               0
+Crash_Label                   0
+dtype: int64
+2024-10-11 04:43:23,471 - INFO -         App_Name  CPU_Usage  ...  App_Usage_Level  Crash_Label
+0        Netflix      35.47  ...           Medium          0.0
+1        Twitter      98.13  ...           Medium          1.0
+2        Discord      61.32  ...              Low          0.0
+3          Slack      86.21  ...              Low          0.0
+4         Amazon      77.27  ...              Low          0.0
+...          ...        ...  ...              ...          ...
+11543  Instagram      73.49  ...              Low          0.0
+11544       Uber      64.50  ...              Low          0.0
+11545  Instagram      30.56  ...             High          0.0
+11546     Amazon      37.57  ...           Medium          0.0
+11547      Slack      68.23  ...             High          0.0
+
+[11548 rows x 15 columns]"
+2024-10-10 23:13:23.690767+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,775f3309-ec9e-4484-930b-77b07718b0a4,Finished in state Completed()
+2024-10-10 23:13:23.968631+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,42f119be-edec-4e02-9793-fbf049e51bee,"Successfully executed ../tasks/Binning.py:
+"
+2024-10-10 23:13:23.970023+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,42f119be-edec-4e02-9793-fbf049e51bee,
+2024-10-10 23:13:23.970660+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,42f119be-edec-4e02-9793-fbf049e51bee,"2024-10-11 04:43:23,893 - INFO - preprocessed Dataset loaded for binning.
+2024-10-11 04:43:23,894 - INFO - Min Session_Time: 137.96, Max Session_Time: 202.17
+2024-10-11 04:43:23,894 - INFO - Bins: [137.96       159.36333333 180.76666667 202.17      ]
+2024-10-11 04:43:23,897 - INFO - Distance Binning Results:
+0          High
+1        Medium
+2        Medium
+3           Low
+4           Low
+          ...  
+11543    Medium
+11544    Medium
+11545    Medium
+11546    Medium
+11547    Medium
+Name: Session_Time, Length: 11548, dtype: category
+Categories (3, object): ['Low' < 'Medium' < 'High']"
+2024-10-10 23:13:23.976080+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,42f119be-edec-4e02-9793-fbf049e51bee,Finished in state Completed()
+2024-10-10 23:13:25.009644+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,06c7bfe7-8bd1-49b9-8a9f-94f87b55bda3,"Successfully executed ../tasks/Encoder.py:
+"
+2024-10-10 23:13:25.010732+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,06c7bfe7-8bd1-49b9-8a9f-94f87b55bda3,
+2024-10-10 23:13:25.011262+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,06c7bfe7-8bd1-49b9-8a9f-94f87b55bda3,"2024-10-11 04:43:24,816 - INFO - Dataset loaded successfully.
+2024-10-11 04:43:24,821 - INFO - DataFrame head:
+  App_Name  CPU_Usage  ...  App_Usage_Level  Crash_Label
+0  Netflix      35.47  ...           Medium          0.0
+1  Twitter      98.13  ...           Medium          1.0
+2  Discord      61.32  ...              Low          0.0
+3    Slack      86.21  ...              Low          0.0
+4   Amazon      77.27  ...              Low          0.0
+
+[5 rows x 15 columns]
+2024-10-11 04:43:24,825 - INFO - 
+Data Types:
+2024-10-11 04:43:24,825 - INFO - App_Name                        int64
+CPU_Usage                     float64
+Memory_Usage                  float64
+Battery_Level                 float64
+Temperature                   float64
+Disk_Space                    float64
+Network_Signal                float64
+App_Version                   float64
+Error_Logs                      int64
+Device_Model                    int64
+Session_Time                    int64
+Num_App_Crashes                 int64
+Duration_Since_Last_Charge    float64
+App_Usage_Level                 int64
+Crash_Label                   float64
+dtype: object
+2024-10-11 04:43:24,825 - INFO -        App_Name  CPU_Usage  ...  App_Usage_Level  Crash_Label
+0             6      35.47  ...                2          0.0
+1            11      98.13  ...                2          1.0
+2             1      61.32  ...                1          0.0
+3             7      86.21  ...                1          0.0
+4             0      77.27  ...                1          0.0
+...         ...        ...  ...              ...          ...
+11543         4      73.49  ...                1          0.0
+11544        12      64.50  ...                1          0.0
+11545         4      30.56  ...                0          0.0
+11546         0      37.57  ...                2          0.0
+11547         7      68.23  ...                0          0.0
+
+[11548 rows x 15 columns]"
+2024-10-10 23:13:25.016859+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,06c7bfe7-8bd1-49b9-8a9f-94f87b55bda3,Finished in state Completed()
+2024-10-10 23:13:26.083601+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,7b861471-93f4-40c2-a601-9be5dac2c1e9,"Successfully executed ../tasks/Normalization.py:
+"
+2024-10-10 23:13:26.085042+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,7b861471-93f4-40c2-a601-9be5dac2c1e9,
+2024-10-10 23:13:26.085572+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,7b861471-93f4-40c2-a601-9be5dac2c1e9,"2024-10-11 04:43:25,856 - INFO - Dataset loaded successfully.
+2024-10-11 04:43:25,861 - INFO - DataFrame head:
+   App_Name  CPU_Usage  ...  App_Usage_Level  Crash_Label
+0         6      35.47  ...                2          0.0
+1        11      98.13  ...                2          1.0
+2         1      61.32  ...                1          0.0
+3         7      86.21  ...                1          0.0
+4         0      77.27  ...                1          0.0
+
+[5 rows x 15 columns]
+2024-10-11 04:43:25,863 - INFO - 
+Normalized DataFrame:
+2024-10-11 04:43:25,863 - INFO -        App_Name  CPU_Usage  ...  App_Usage_Level  Crash_Label
+0      0.428571   0.215094  ...              1.0          0.0
+1      0.785714   0.977845  ...              1.0          1.0
+2      0.071429   0.529763  ...              0.5          0.0
+3      0.500000   0.832745  ...              0.5          0.0
+4      0.000000   0.723920  ...              0.5          0.0
+...         ...        ...  ...              ...          ...
+11543  0.285714   0.677906  ...              0.5          0.0
+11544  0.857143   0.568472  ...              0.5          0.0
+11545  0.285714   0.155326  ...              0.0          0.0
+11546  0.000000   0.240657  ...              1.0          0.0
+11547  0.500000   0.613877  ...              0.0          0.0
+
+[11548 rows x 15 columns]"
+2024-10-10 23:13:26.091119+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,7b861471-93f4-40c2-a601-9be5dac2c1e9,Finished in state Completed()
+2024-10-10 23:13:27.007906+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,483d0134-495a-4457-a2dc-34ff947b8887,"Successfully executed ../tasks/PearsonCorrelation.py:
+Pearson correlation: -0.998
+"
+2024-10-10 23:13:27.008964+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,483d0134-495a-4457-a2dc-34ff947b8887,Pearson correlation: -0.998
+2024-10-10 23:13:27.009505+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,483d0134-495a-4457-a2dc-34ff947b8887,"2024-10-11 04:43:26,729 - INFO - Dataset loaded for Pearson correlation.
+2024-10-11 04:43:26,924 - INFO - Scatter plot saved as 'scatter_plot.png'"
+2024-10-10 23:13:27.012035+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,483d0134-495a-4457-a2dc-34ff947b8887,Finished in state Completed()
+2024-10-10 23:13:27.782747+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,a2595c53-4160-4b46-a7ab-f6e586bf4772,"Successfully executed ../tasks/FeatureEngineering.py:
+"
+2024-10-10 23:13:27.783859+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,a2595c53-4160-4b46-a7ab-f6e586bf4772,
+2024-10-10 23:13:27.784502+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,a2595c53-4160-4b46-a7ab-f6e586bf4772,"2024-10-11 04:43:27,630 - INFO - App_Name           float64
+CPU_Usage          float64
+Memory_Usage       float64
+Battery_Level      float64
+Temperature        float64
+Disk_Space         float64
+Network_Signal     float64
+App_Version        float64
+Error_Logs         float64
+Device_Model       float64
+Session_Time       float64
+Num_App_Crashes    float64
+App_Usage_Level    float64
+Crash_Label        float64
+dtype: object"
+2024-10-10 23:13:27.789546+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,a2595c53-4160-4b46-a7ab-f6e586bf4772,Finished in state Completed()
+2024-10-10 23:13:31.886617+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,c414eb63-a760-4073-b121-c1b1eec5980d,"Successfully executed ../tasks/FeatureImportanceMLAlgorithms.py:
+Feature: App_Name, Score: 0.00220
+Feature: CPU_Usage, Score: 0.01377
+Feature: Memory_Usage, Score: 0.00247
+Feature: Battery_Level, Score: 0.21251
+Feature: Temperature, Score: 0.45414
+Feature: Disk_Space, Score: 0.17900
+Feature: Network_Signal, Score: 0.00283
+Feature: App_Version, Score: 0.00069
+Feature: Error_Logs, Score: 0.00028
+Feature: Device_Model, Score: 0.00047
+Feature: Session_Time, Score: 0.00044
+Feature: Num_App_Crashes, Score: 0.02455
+Feature: App_Usage_Level, Score: 0.10664
+"
+2024-10-10 23:13:31.887806+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,c414eb63-a760-4073-b121-c1b1eec5980d,"Feature: App_Name, Score: 0.00220
+Feature: CPU_Usage, Score: 0.01377
+Feature: Memory_Usage, Score: 0.00247
+Feature: Battery_Level, Score: 0.21251
+Feature: Temperature, Score: 0.45414
+Feature: Disk_Space, Score: 0.17900
+Feature: Network_Signal, Score: 0.00283
+Feature: App_Version, Score: 0.00069
+Feature: Error_Logs, Score: 0.00028
+Feature: Device_Model, Score: 0.00047
+Feature: Session_Time, Score: 0.00044
+Feature: Num_App_Crashes, Score: 0.02455
+Feature: App_Usage_Level, Score: 0.10664"
+2024-10-10 23:13:31.888554+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,c414eb63-a760-4073-b121-c1b1eec5980d,"/Users/deepak/.pyenv/versions/3.12.6/lib/python3.12/site-packages/sklearn/base.py:1473: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  return fit_method(estimator, *args, **kwargs)
+2024-10-11 04:43:31,782 - INFO - Scatter plot saved as 'feature_importancet.png'"
+2024-10-10 23:13:31.893366+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,c414eb63-a760-4073-b121-c1b1eec5980d,Finished in state Completed()
+2024-10-10 23:13:32.275199+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,,Finished in state Completed()
+2024-10-10 23:13:34.801803+00:00,20,dc64762e-9207-40cd-a674-9944508f6870,,Process for flow run 'archetypal-cockle' exited cleanly.
