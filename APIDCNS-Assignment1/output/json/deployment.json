@@ -1,0 +1,75 @@
+{
+    "id": "80f824fd-8d76-4884-b8ca-5239a924d841",
+    "created": "2024-10-10T15:15:40.730006+00:00",
+    "updated": "2024-10-10T22:31:20.248370+00:00",
+    "infra_overrides": {},
+    "name": "system-crash-ds-workflow",
+    "version": "aa87cd268b00ac51b9778d8bd8e10c64",
+    "description": "None",
+    "flow_id": "1bcc3271-5c19-4b9f-a57d-7a0d238e78f5",
+    "schedule": {
+        "interval": 120.0,
+        "anchor_date": "2024-10-11T04:01:18.950833+05:30",
+        "timezone": "Asia/Kolkata"
+    },
+    "is_schedule_active": true,
+    "paused": false,
+    "disabled": false,
+    "schedules": [
+        {
+            "id": "4b48cc2e-8db0-42c6-986e-6d003e1dbd93",
+            "created": "2024-10-10T22:31:20.285054+00:00",
+            "updated": "2024-10-10T22:31:20.230046+00:00",
+            "deployment_id": "80f824fd-8d76-4884-b8ca-5239a924d841",
+            "schedule": {
+                "interval": 120.0,
+                "anchor_date": "2024-10-11T04:01:18.950833+05:30",
+                "timezone": "Asia/Kolkata"
+            },
+            "active": true,
+            "last_scheduled_at": null,
+            "soonest_scheduled_run": null,
+            "latest_scheduled_run": null,
+            "max_active_runs": null,
+            "max_scheduled_runs": null,
+            "catchup": false
+        }
+    ],
+    "concurrency_limit": null,
+    "global_concurrency_limit": null,
+    "concurrency_options": null,
+    "job_variables": {},
+    "parameters": {},
+    "tags": [
+        "system crash datascience project workflow"
+    ],
+    "labels": {
+        "prefect.flow.id": "1bcc3271-5c19-4b9f-a57d-7a0d238e78f5"
+    },
+    "work_queue_name": null,
+    "last_polled": "2024-10-10T23:04:30.115010+00:00",
+    "parameter_openapi_schema": {
+        "type": "object",
+        "title": "Parameters",
+        "properties": {}
+    },
+    "path": ".",
+    "pull_steps": [],
+    "entrypoint": "workflow_crash_detect.py:main_flow",
+    "manifest_path": null,
+    "storage_document_id": null,
+    "infrastructure_document_id": null,
+    "created_by": {
+        "id": "7a1a7304-17f6-4428-9ba9-0abc8104aca7",
+        "type": "USER",
+        "display_value": "kappa78-broglie"
+    },
+    "updated_by": {
+        "id": "7a1a7304-17f6-4428-9ba9-0abc8104aca7",
+        "type": "USER",
+        "display_value": "kappa78-broglie"
+    },
+    "work_pool_name": null,
+    "status": "READY",
+    "enforce_parameter_schema": true
+}
