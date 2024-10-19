@@ -5,14 +5,19 @@ from matplotlib import pyplot as plt
 import io
 import base64
 from scipy.stats import pearsonr
+import os
 
 
 # Configure standard Python logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+# Get the current script's directory
+script_dir = os.path.dirname(__file__)
+csv_file_path = os.path.join(script_dir, '../data/encoded_v1.csv')
+
 # Import the data
-normalized_df = pd.read_csv("../data/normalized_v1.csv")
+normalized_df = pd.read_csv(csv_file_path)
 logger.info("Dataset loaded for Pearson correlation.")
 
 # Convert dataframe into series
@@ -39,7 +44,8 @@ buf.seek(0)
 img_base64 = base64.b64encode(buf.read()).decode('utf-8')
 
 # Save the plot as a file
-plt.savefig("../output/scatter_plot.png")
+op_image_file_path = os.path.join(script_dir, '../output/scatter_plot.png')
+plt.savefig(op_image_file_path)
 logger.info("Scatter plot saved as 'scatter_plot.png'")
 
 # Close the buffer

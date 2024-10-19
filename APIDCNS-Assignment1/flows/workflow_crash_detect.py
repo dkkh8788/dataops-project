@@ -33,12 +33,14 @@ def main_flow():
     # Run tasks sequentially and capture the results
    data1 = run_task("../tasks/BasicStats.py")
    data2 = run_task("../tasks/DataPreProcess.py", wait_for=[data1])
-   data3 = run_task("../tasks/Binning.py", wait_for=[data2])  
-   data4 = run_task("../tasks/Encoder.py", wait_for=[data3]) 
-   data5 = run_task("../tasks/Normalization.py", wait_for=[data4]) 
-   data6 = run_task("../tasks/PearsonCorrelation.py", wait_for=[data5]) 
-   data7 = run_task("../tasks/FeatureEngineering.py", wait_for=[data6])
-   data8 = run_task("../tasks/FeatureImportanceMLAlgorithms.py", wait_for=[data7]) 
+   data3 = run_task("../tasks/Normalization.py", wait_for=[data2]) 
+   data4 = run_task("../tasks/Binning.py", wait_for=[data3])  
+   data5 = run_task("../tasks/Encoder.py", wait_for=[data4]) 
+   data6 = run_task("../tasks/HeatMap.py", wait_for=[data5]) 
+   data7 = run_task("../tasks/PearsonCorrelation.py", wait_for=[data5]) 
+   data8 = run_task("../tasks/FeatureEngineering.py", wait_for=[data5])
+   data9 = run_task("../tasks/FeatureImportanceMLAlgorithms.py", wait_for=[data6]) 
+   data10 = run_task("../tasks/UnivariateAnalysis.py", wait_for=[data5])
 
 # To run locally
 if __name__ == "__main__":

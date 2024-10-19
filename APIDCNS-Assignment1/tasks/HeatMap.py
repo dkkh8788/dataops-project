@@ -4,16 +4,21 @@ from matplotlib import pyplot as plt
 import io
 import base64
 from scipy.stats import pearsonr
-from tkinter import TRUE 
+#from tkinter import TRUE 
 import seaborn as sns
+import os
 
 
 # Configure standard Python logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+# Get the current script's directory
+script_dir = os.path.dirname(__file__)
+csv_file_path = os.path.join(script_dir, '../data/encoded_v1.csv')
+
 # Import the data
-normalized_df = pd.read_csv("../data/normalized_v1.csv")
+normalized_df = pd.read_csv(csv_file_path)
 logger.info("Dataset loaded for Pearson correlation.")
 
 
@@ -46,7 +51,9 @@ buf.seek(0)
 img_base64 = base64.b64encode(buf.read()).decode('utf-8')
 
 # Save the plot as a file
-plt.savefig("../output/heatmap.png")
+op_img_file_path = os.path.join(script_dir, '../output/heatmap.png')
+
+plt.savefig(op_img_file_path)
 logger.info("Heast Map is saved")
 
 # Close the buffer

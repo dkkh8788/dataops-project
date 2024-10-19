@@ -5,24 +5,27 @@ from matplotlib import pyplot as plt
 import io
 import base64
 from scipy.stats import pearsonr
+import os
 
 
 # Configure standard Python logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+
+# Get the current script's directory
+script_dir = os.path.dirname(__file__)
+csv_file_path = os.path.join(script_dir, "../data/feature_engineered_v1.csv")
+
 # Import the data
-featured_data = pd.read_csv("../data/feature_engineered_v1.csv")
-
+featured_data = pd.read_csv(csv_file_path)
 # Removing Duration_Since_Last_charge as it is redundent
-
 from sklearn.ensemble import RandomForestRegressor
 # define the model
 model = RandomForestRegressor()
 
 X = featured_data.iloc[:,[0,1,2,3,4,5,6,7,8,9,10,11,12]] 
 Y = featured_data.iloc[:,[13]]  
-
 # fit the model
 model.fit(X,Y)
 # get importance
@@ -41,12 +44,11 @@ plt.xlabel('Features')
 buf = io.BytesIO()
 plt.savefig(buf, format='png')
 buf.seek(0)
-
 # Encode the image in base64 and log it
 img_base64 = base64.b64encode(buf.read()).decode('utf-8')
-
 # Save the plot as a file
-plt.savefig("../output/feature_importance.png")
+op_img_file_path = os.path.join(script_dir, "../output/feature_importance.png")
+plt.savefig(op_img_file_path)
 logger.info("Scatter plot saved as 'feature_importancet.png'")
 
 # Close the buffer

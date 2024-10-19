@@ -4,7 +4,7 @@
 
 import requests
 import os
-import csv
+import json
 
 # Replace these variables with your actual Prefect Cloud credentials
 PREFECT_API_KEY = "pnu_4yYYsbgXIQtlkNhRhB9zFJcKu5dw2E4jUSoo"  # Your Prefect Cloud API key
@@ -15,7 +15,7 @@ DEPLOYMENT_ID = "80f824fd-8d76-4884-b8ca-5239a924d841"  # Your Deployment ID
 FLOW_RUN_ID = "f2b3672d-6b8c-4bf9-9024-34dcb02a1ddf"
 
 # Correct API URL to get flow details
-PREFECT_API_URL = f"https://api.prefect.cloud/api/accounts/{ACCOUNT_ID}/workspaces/{WORKSPACE_ID}/flow_runs/{FLOW_RUN_ID}/logs/download"
+PREFECT_API_URL = f"https://api.prefect.cloud/api/accounts/{ACCOUNT_ID}/workspaces/{WORKSPACE_ID}/flow_runs/{FLOW_RUN_ID}"
 
 # Set up headers with Authorization
 headers = {"Authorization": f"Bearer {PREFECT_API_KEY}"}
@@ -25,28 +25,18 @@ response = requests.get(PREFECT_API_URL, headers=headers)
 
 # Check the response status
 if response.status_code == 200:
-    directory_path = "../output/logs/"
-    csv_filename = "output_logs.csv"
-    text_filename = "output_logs.txt"
-    csv_file_path = os.path.join(directory_path, csv_filename)
-    text_file_path = os.path.join(directory_path, text_filename)
+    flow_info = response.json()
+    print(flow_info)
+    directory_path = "../output/json/"
+    filename = "flow_runs.json"
+    file_path = os.path.join(directory_path, filename)
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
-
-    with open(text_file_path, "w") as textfile:
-        textfile.write(response.text)
+    with open(file_path, "w") as f:
+        json.dump(flow_info, f, indent=4)  # Indent for better readability
     print("\n================================================================");
-    print(f"Logs are downloaded and saved to {text_file_path}")
+    print("JSON object written to:", file_path)
     print("=================================================================\n");
-
-    with open(csv_file_path, 'w', newline='') as csvfile:
-        csv_writer = csv.writer(csvfile)
-        for row in csv.reader(response.text.splitlines()):
-            csv_writer.writerow(row)
-
-    print("\n=======================================================================");
-    print(f"Logs in CSV data format are downloaded and saved to {csv_file_path}")
-    print("==========================================================================\n");
 else:
     print(f"Error: Received status code {response.status_code}")
     print(f"Response content: {response.text}")

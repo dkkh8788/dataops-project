@@ -1,13 +1,18 @@
 import pandas as pd
 import numpy as np
 import logging
+import os
 
 # Configure standard Python logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-df = pd.read_csv("../data/pre-processed_data_v1.csv")
-logger.info("preprocessed Dataset loaded for binning.")
+# Get the current script's directory
+script_dir = os.path.dirname(__file__)
+csv_file_path = os.path.join(script_dir, '../data/normalized_v1.csv')
+
+df = pd.read_csv(csv_file_path)
+logger.info("Normalized Dataset loaded for binning.")
 
 # Distance binning
 min_value = df['Session_Time'].min()
@@ -25,4 +30,6 @@ df['Session_Time'] = pd.cut(df['Session_Time'], bins=bins, labels=labels, includ
 logger.info(f"Distance Binning Results:\n{df['Session_Time']}")
 
 ###############################################Export DF to CSV###################################################
-df.to_csv('../data/binned_v1.csv', index=False)
+output_csv_file_path = os.path.join(script_dir, '../data/binned_v1.csv')
+
+df.to_csv(output_csv_file_path, index=False)

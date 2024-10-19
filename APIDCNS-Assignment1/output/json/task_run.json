@@ -1,0 +1,61 @@
+{
+    "id": "3e7be9e7-7107-4af6-b165-e9d54954b1f6",
+    "created": "2024-10-19T14:45:32.237392+00:00",
+    "updated": "2024-10-19T14:45:33.305345+00:00",
+    "name": "run_task-b98",
+    "flow_run_id": "f2b3672d-6b8c-4bf9-9024-34dcb02a1ddf",
+    "task_key": "run_task-156edf08",
+    "dynamic_key": "b989bc4b-09b1-47b7-89b7-41eabfd9cd4a",
+    "cache_key": null,
+    "cache_expiration": null,
+    "task_version": null,
+    "empirical_policy": {
+        "max_retries": 0,
+        "retry_delay_seconds": 0.0,
+        "retries": 0,
+        "retry_delay": 0,
+        "retry_jitter_factor": null
+    },
+    "tags": [],
+    "state_id": "55eedc45-d4d1-4204-8766-cc0ae8a848f4",
+    "task_inputs": {
+        "script_name": []
+    },
+    "state_type": "COMPLETED",
+    "state_name": "Completed",
+    "run_count": 1,
+    "flow_run_run_count": 1,
+    "expected_start_time": "2024-10-19T14:45:30.994695+00:00",
+    "next_scheduled_start_time": null,
+    "start_time": "2024-10-19T14:45:31.007297+00:00",
+    "end_time": "2024-10-19T14:45:32.934458+00:00",
+    "total_run_time": 1.927161,
+    "estimated_run_time": 1.927161,
+    "estimated_start_time_delta": 0.012602,
+    "state": {
+        "id": "55eedc45-d4d1-4204-8766-cc0ae8a848f4",
+        "type": "COMPLETED",
+        "name": "Completed",
+        "timestamp": "2024-10-19T14:45:32.934458+00:00",
+        "message": "",
+        "data": null,
+        "state_details": {
+            "flow_run_id": "f2b3672d-6b8c-4bf9-9024-34dcb02a1ddf",
+            "task_run_id": "3e7be9e7-7107-4af6-b165-e9d54954b1f6",
+            "child_flow_run_id": null,
+            "scheduled_time": null,
+            "cache_key": null,
+            "cache_expiration": null,
+            "deferred": null,
+            "untrackable_result": true,
+            "pause_timeout": null,
+            "pause_reschedule": false,
+            "pause_key": null,
+            "run_input_keyset": null,
+            "refresh_cache": null,
+            "retriable": null,
+            "transition_id": null,
+            "task_parameters_id": null
+        }
+    }
+}
